@@ -5,8 +5,10 @@ def texify(str):
     # TODO
     return str
 
+
 def format_label(ptr):
     print(f'\\node[label, {ptr.attrib["kind"]}] at({ptr.attrib["x"]}, {ptr.attrib["y"]}) {{$ {texify(ptr.text)} $}};')
+
 
 def format_node(ptr):
     print(f'\\node[node] at({ptr.attrib["x"]}, {ptr.attrib["y"]}) ({ptr.attrib['id']}) {{}};')
@@ -16,12 +18,14 @@ def format_node(ptr):
     for lbl in ptr.findall('label'):
         format_label(lbl)
 
+
 def format_trans(ptr):
     def fetch_ref(name):
         return ptr.find(name).attrib["ref"]
     print(f'\\draw[->] ({fetch_ref("source")}) -- ({fetch_ref("target")});')
     for lbl in ptr.findall('label'):
         format_label(lbl)
+
 
 def main():
     print(f'Parsing {sys.argv[1]}')
