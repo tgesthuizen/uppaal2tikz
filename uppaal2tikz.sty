@@ -1,7 +1,6 @@
 \ProvidesPackage{uppaal2tikz}
 
 \RequirePackage{tikz}
-\usetikzlibaries{automata}
 
 \tikzset{
   uppaal_node/.style={
@@ -10,11 +9,14 @@
     align=center,
     fill=blue!40,
   },
-  uppaal_init/.style={
-    double
-  },
   uppaal_label/.style={
     align=center,
+  },
+  uppaal_node_name/.style={
+    uppaal_label,
+  },
+  uppaal_init/.style={
+    double
   },
   uppaal_comments/.style={
     uppaal_label,
