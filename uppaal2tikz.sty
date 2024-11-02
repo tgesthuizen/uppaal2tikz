@@ -1,0 +1,35 @@
+\ProvidesPackage{uppaal2tikz}
+
+\RequirePackage{tikz}
+\usetikzlibaries{automata}
+
+\tikzset{
+  uppaal_node/.style={
+    circle,
+    draw,
+    align=center,
+    fill=blue!40,
+  },
+  uppaal_init/.style={
+    double
+  },
+  uppaal_label/.style={
+    align=center,
+  },
+  uppaal_comments/.style={
+    uppaal_label,
+  },
+  uppaal_guard/.style={
+    uppaal_label,
+  },
+  uppaal_invariant/.style={
+    uppaal_label,
+  },
+  uppaal_guard/.style={
+    uppaal_label,
+  },
+  uppaal_trans/.style={
+    ->,
+    thick,
+  },
+}
