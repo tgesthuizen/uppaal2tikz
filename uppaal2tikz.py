@@ -2,7 +2,9 @@ import xml.etree.ElementTree
 import sys
 
 def texify(str):
-    # TODO
+    str = str.replace('&', '\\&')
+    str = str.replace('<=', '\\leq')
+    str = str.replace('>=', '\\geq')
     return str
 
 
